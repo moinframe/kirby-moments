@@ -1,4 +1,6 @@
-# Modify frontend output
+---
+title: Frontend
+---
 
 By default the configured store page (e.g. `moments`) will display the grid of your moments. You can also include a block or a snippet to output your moments on another page.
 
@@ -8,11 +10,9 @@ To use the `moments` block, include it anywhere in your `type: blocks` or `type:
 
 ```yml
 myblocks:
-	type: blocks
-	fieldsets:
-		- heading
-		- text
-		- moments
+  type: blocks
+  fieldsets:
+    - moments
 ```
 
 ## Use the snippet
@@ -25,9 +25,8 @@ To use the snippet, just place it anywhere on your page. It will automatically s
 <!-- Other content -->
 ```
 
-:::info 
-To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/configuration.html#use-a-different-page-for-display)
-:::
+> [!TIPP]
+> To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/docs/femundfilou-kirby-moments/03-configuration)
 
 
 ## Overwrite core parts

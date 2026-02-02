@@ -1,6 +1,7 @@
-# Quickstart
+---
+title: Installation
+---
 
-## Installation
 You can install this plugin in three different ways, depending on personal preference.
 
 ### Install via download
@@ -19,16 +20,15 @@ git submodule add https://github.com/femundfilou/kirby-moments.git site/plugins/
 composer require femundfilou/kirby-moments
 ```
 
-## Create necessary folder
+## Content
 
 This plugin needs a page to store all images. By default, the plugin will look for a page with the slug `moments` and the template of `moments`.
 
 After install, the plugin will create the store page itself and set it to published.
 
-::: info Custom page slug
-You can customize the slug being used through the [configuration](/configuration). If you change the slug after initialization, be sure to delete the previously generated page.
-:::
+> [!TIPP] **Custom page slug**
+> You can customize the slug being used through the [configuration](/configuration). If you change the slug after initialization, be sure to delete the previously generated page.
 
-## Enable Apple Shortcut
+## Apple Shortcut
 
 You can use an Apple Shortcut to upload images quickly. See the [configuration](/shortcuts).
