@@ -1,29 +1,25 @@
 {
-	"name": "femundfilou-kirby-moments",
-	"version": "1.0.0-beta.6",
-	"description": "Little Moments Matter. Share Yours.",
-	"homepage": "https://plugins.femundfilou.com/kirby-moments",
-	"scripts": {
-		"build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
-		"build:ts": "tsc && esbuild ./src/moments.js --minify --outfile=./assets/moments.min.js",
-		"build": "pnpm build:css && pnpm build:ts",
-		"dev": "turbowatch ./turbowatch.ts",
-		"release": "release-it",
-		"docs:dev": "vitepress dev docs",
-		"docs:build": "vitepress build docs",
-		"docs:preview": "vitepress preview docs"
-	},
-	"author": "Justus Kraft <justus@femundfilou.com>",
-	"license": "MIT",
-	"devDependencies": {
-		"@release-it/bumper": "^7.0.5",
-		"@release-it/conventional-changelog": "^10.0.4",
-		"esbuild": "^0.27.2",
-		"lightningcss-cli": "^1.31.1",
-		"release-it": "^19.2.4",
-		"turbowatch": "^2.30.0",
-		"typescript": "^5.9.3",
-		"vitepress": "^1.6.4"
-	},
-	"packageManager": "pnpm@10.28.2"
+  "name": "femundfilou-kirby-moments",
+  "version": "1.0.0-beta.6",
+  "description": "Little Moments Matter. Share Yours.",
+  "homepage": "https://plugins.femundfilou.com/kirby-moments",
+  "scripts": {
+    "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
+    "build:ts": "tsc && esbuild ./src/moments.js --minify --outfile=./assets/moments.min.js",
+    "build": "pnpm build:css && pnpm build:ts",
+    "dev": "turbowatch ./turbowatch.ts",
+    "release": "release-it"
+  },
+  "author": "Justus Kraft <justus@femundfilou.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@release-it/bumper": "^7.0.5",
+    "@release-it/conventional-changelog": "^10.0.4",
+    "esbuild": "^0.27.2",
+    "lightningcss-cli": "^1.31.1",
+    "release-it": "^19.2.4",
+    "turbowatch": "^2.30.0",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.28.2"
 }
