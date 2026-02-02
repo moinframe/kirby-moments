@@ -4,8 +4,8 @@
   "description": "Little Moments Matter. Share Yours.",
   "homepage": "https://plugins.femundfilou.com/kirby-moments",
   "scripts": {
-    "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
-    "build:ts": "tsc && esbuild ./src/moments.js --minify --outfile=./assets/moments.min.js",
+    "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./frontend/moments.css ./frontend/reset.css --output-dir ./assets/",
+    "build:ts": "tsc && esbuild ./frontend/moments.js --minify --outfile=./assets/moments.min.js",
     "build": "pnpm build:css && pnpm build:ts",
     "dev": "turbowatch ./turbowatch.ts",
     "release": "release-it"
