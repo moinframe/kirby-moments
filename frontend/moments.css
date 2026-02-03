@@ -12,7 +12,7 @@
   --moments-grid-background: linear-gradient(rgba(0 0 0 /0.5), #000);
   --moments-lightbox-background: #fff;
   --moments-lightbox-color: #000;
-  --moments-lightbox-controls-color: #999;
+  --moments-lightbox-controls-color: #595959;
   --moments-lightbox-controls-hover-color: #000;
   --moments-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --moments-font-weight: normal;
@@ -217,9 +217,14 @@ ul.moments-grid {
     }
 
     &:hover,
-    &:active,
+    &:active {
+      color: var(--moments-lightbox-controls-hover-color);
+    }
+
     &:focus-visible {
       color: var(--moments-lightbox-controls-hover-color);
+      outline: 2px solid var(--moments-lightbox-controls-hover-color);
+      outline-offset: 2px;
     }
   }
 
@@ -264,9 +269,14 @@ ul.moments-grid {
     }
 
     &:hover,
-    &:active,
+    &:active {
+      color: var(--moments-lightbox-controls-hover-color);
+    }
+
     &:focus-visible {
       color: var(--moments-lightbox-controls-hover-color);
+      outline: 2px solid var(--moments-lightbox-controls-hover-color);
+      outline-offset: 2px;
     }
 
     svg {
