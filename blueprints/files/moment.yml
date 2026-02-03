@@ -13,9 +13,13 @@ fields:
     label: moinframe.moments.panel.files.moment.fields.text.label
     type: writer
     width: 1/2
+    marks: []
+    nodes: []
     inline: true
   alt:
     label: moinframe.moments.panel.files.moment.fields.alt.label
     type: writer
     width: 1/2
+    marks: []
+    nodes: []
     inline: true
