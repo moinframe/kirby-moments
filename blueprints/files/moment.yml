@@ -6,12 +6,16 @@ accept:
   maxsize: 50000000 # size in byte = 50 MB
 fields:
   date:
-    label: Datum
+    label: femundfilou.kirby-moments.panel.files.moment.fields.date.label
     type: date
     time: true
   text:
+    label: femundfilou.kirby-moments.panel.files.moment.fields.text.label
     type: writer
+    width: 1/2
     inline: true
   alt:
+    label: femundfilou.kirby-moments.panel.files.moment.fields.alt.label
     type: writer
+    width: 1/2
     inline: true
