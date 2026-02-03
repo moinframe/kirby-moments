@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0-beta.1](///compare/v2.0.0-beta.0...v2.0.0-beta.1) (2026-02-03)
+
+### Features
+
+* add lightbox option using web components c85b0fe
+* add new overview option, enable lightbox by default 6c5a300
+* make multilang, add option to use homepage as pageId 5decdae
+* scroll to moments on navigate back 06380d0
+
+### Bug Fixes
+
+* remove marks and nodes from text fields 53ce50b
+
 ## [2.0.0-beta.0](///compare/v1.0.0-beta.6...v2.0.0-beta.0) (2026-02-03)
 
 ### Features
