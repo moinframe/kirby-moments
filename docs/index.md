@@ -2,16 +2,8 @@
 
 ---
 # Kirby Moments
-Little Moments Matter. Share Yours.
-Use this plugin to a photo feed to your Kirby CMS powered website.
+## Little Moments Matter. Share Yours.
 
-## Claim back your photo feed
+This plugin adds a simple photo feed to your [Kirby CMS](https://getkirby.com) powered website.
 
-### Apple Shortcut
-Use a Shortcut on your Apple devices to quickly post a new photo in seconds.
-
-### RSS Feed
-Let your friends subscribe to your photo feed via RSS like it's 2005.
-
-### Fully customizable
-While the plugin comes with styles and (optional) javascript, it can easily be customized to your likings.
+With the help of an Apple Shortcut, you can instantly post photos from your iOS or macOS device to your website. Every of your moments has it's own url you can share. And there also is a rss feed for others to subscribe to.

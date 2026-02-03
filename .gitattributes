@@ -15,5 +15,4 @@ deploy.sh export-ignore
 deploy.sh export-ignore
 
 # Docs
-docs export-ignore
 kirby-moments.png export-ignore
