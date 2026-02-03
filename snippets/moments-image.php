@@ -2,6 +2,7 @@
 if ($image = $moment->image()) :
     $type = $type ?? 'lightbox';
     $sizes = $type === 'grid' ? option('femundfilou.kirby-moments.thumbs.sizes.grid', 'auto') : option('femundfilou.kirby-moments.thumbs.sizes.lightbox', '100vw');
+    $alt = $moment->alt()->or($moment->text())->or($moment->title())->escape();
     ?>
 	<figure class="moment-image">
 		<picture>
@@ -12,7 +13,8 @@ if ($image = $moment->image()) :
 				<?php if (option('femundfilou.kirby-moments.thumbs.srcsets.grid-webp')) : ?>
 					<source srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.grid-webp')) ?>" sizes="<?= $sizes ?>" type="image/webp">
 				<?php endif; ?>
-				<img alt="<?= $moment->alt()->or($moment->text())->or($moment->title()) ?>" src="<?= $image->crop(600)->url() ?>" srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.grid')) ?>" sizes="<?= $sizes ?>" width="<?= $image->crop(600)->width() ?>" height="<?= $image->crop(600)->height() ?>">
+				<?php $gridCrop = $image->crop(600); ?>
+				<img alt="<?= $alt ?>" src="<?= $gridCrop->url() ?>" srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.grid')) ?>" sizes="<?= $sizes ?>" width="<?= $gridCrop->width() ?>" height="<?= $gridCrop->height() ?>">
 			<?php else : ?>
 				<?php if (option('femundfilou.kirby-moments.thumbs.srcsets.lightbox-avif')) : ?>
 					<source srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.lightbox-avif')) ?>" sizes="<?= $sizes ?>" type="image/avif">
@@ -20,7 +22,8 @@ if ($image = $moment->image()) :
 				<?php if (option('femundfilou.kirby-moments.thumbs.srcsets.lightbox-webp')) : ?>
 					<source srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.lightbox-webp')) ?>" sizes="<?= $sizes ?>" type="image/webp">
 				<?php endif; ?>
-				<img alt="<?= $moment->alt()->or($moment->text())->or($moment->title()) ?>" src="<?= $image->crop(900)->url() ?>" srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.lightbox')) ?>" sizes="<?= $sizes ?>" width="<?= $image->crop(900)->width() ?>" height="<?= $image->crop(900)->height() ?>">
+				<?php $lightboxCrop = $image->crop(900); ?>
+				<img alt="<?= $alt ?>" src="<?= $lightboxCrop->url() ?>" srcset="<?= $image->srcset(option('femundfilou.kirby-moments.thumbs.srcsets.lightbox')) ?>" sizes="<?= $sizes ?>" width="<?= $lightboxCrop->width() ?>" height="<?= $lightboxCrop->height() ?>">
 			<?php endif; ?>
 		</picture>
 	</figure>

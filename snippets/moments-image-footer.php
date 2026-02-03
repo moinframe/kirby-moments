@@ -1,7 +1,7 @@
 <?php if ($page->date()->isNotEmpty()) : ?>
     <?php if ($page->text()->isNotEmpty()) : ?>
         <div class="moments-image-footer__text">
-            <p><?= $page->text() ?></p>
+            <p><?= $page->text()->escape() ?></p>
         </div>
     <?php endif; ?>
     <div class="moments-image-footer__time">
