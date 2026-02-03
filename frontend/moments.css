@@ -177,12 +177,23 @@ ul.moments-grid {
 # Moment Lightbox
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Web Component
+--------------------------------------------------------------*/
+
+moments-lightbox {
+  display: contents;
+}
+
+/*--------------------------------------------------------------
+# Moment Lightbox
+--------------------------------------------------------------*/
+
 .moment-lightbox {
   font-family: var(--moments-font-family);
   font-weight: var(--moments-font-weight);
   box-sizing: border-box;
   z-index: 1000;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -197,6 +208,10 @@ ul.moments-grid {
   border: 0;
   max-height: none;
   max-width: none;
+
+  &[open] {
+    display: flex;
+  }
 
   .moment-close {
     align-self: flex-end;

@@ -59,6 +59,7 @@ Kirby::plugin('moinframe/moments', [
             'active' => true,
             'language' => ''
         ],
+        'lightbox' => false,
         'thumbs' => [
             'sizes' => [
                 'grid' => '(min-width: 900px) 25vw, (min-width: 600px) 33vw, (min-width: 400px) 50vw, 100vw'
@@ -96,8 +97,21 @@ Kirby::plugin('moinframe/moments', [
             return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
         },
         'toMomentsDate' => function ($field) {
-            $format = option('moinframe.moments.dateformat') ?: (option('date.handler') === 'intl' ? 'MM/dd/YYYY' : 'm/d/Y');
-            return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
+            if (!$field->exists() || $field->isEmpty()) return '';
+
+            $format = option('moinframe.moments.dateformat');
+            if ($format) {
+                return $field->toDate($format);
+            }
+
+            $locale = kirby()->language()?->code() ?? 'en';
+            $formatter = new IntlDateFormatter(
+                $locale,
+                IntlDateFormatter::SHORT,
+                IntlDateFormatter::NONE
+            );
+
+            return $formatter->format($field->toTimestamp());
         }
     ],
     'pageModels' => [
@@ -128,6 +142,7 @@ Kirby::plugin('moinframe/moments', [
         'moments-icon/close' => __DIR__ . '/snippets/moments-icon/close.php',
         'moments-icon/prev' => __DIR__ . '/snippets/moments-icon/prev.php',
         'moments-icon/next' => __DIR__ . '/snippets/moments-icon/next.php',
+        'moments-lightbox' => __DIR__ . '/snippets/moments-lightbox.php',
         'layout/moments' => __DIR__ . '/snippets/layout/moments.php',
         'blocks/moments' => __DIR__ . '/snippets/blocks/moments.php',
     ],

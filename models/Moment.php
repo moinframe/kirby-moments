@@ -21,4 +21,33 @@ class MomentPage extends Kirby\Cms\Page
 
 		return parent::image($filename);
 	}
+
+	public function toMomentsInterface(): array
+	{
+		$allMoments = collection('moments/all')->flip();
+		$image = $this->image();
+		$lightboxCrop = $image?->crop(900);
+
+		return [
+			'url' => $this->url(),
+			'image' => $image ? [
+				'src' => $lightboxCrop?->url(),
+				'srcset' => $image->srcset(option('moinframe.moments.thumbs.srcsets.lightbox')),
+				'webpSrcset' => option('moinframe.moments.thumbs.srcsets.lightbox-webp')
+					? $image->srcset(option('moinframe.moments.thumbs.srcsets.lightbox-webp'))
+					: null,
+				'alt' => $this->alt()->or($this->text())->or($this->title())->escape()->value(),
+				'width' => $lightboxCrop?->width(),
+				'height' => $lightboxCrop?->height(),
+				'sizes' => option('moinframe.moments.thumbs.sizes.lightbox', '100vw'),
+			] : null,
+			'text' => $this->text()->isNotEmpty() ? $this->text()->escape()->value() : null,
+			'date' => $this->date()->isNotEmpty() ? [
+				'timestamp' => $this->date()->toMomentsTimestamp(),
+				'formatted' => $this->date()->toMomentsDate(),
+			] : null,
+			'prev' => $this->hasPrev($allMoments) ? $this->prev($allMoments)->url() : null,
+			'next' => $this->hasNext($allMoments) ? $this->next($allMoments)->url() : null,
+		];
+	}
 }

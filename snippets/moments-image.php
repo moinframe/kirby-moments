@@ -7,18 +7,12 @@ if ($image = $moment->image()) :
 	<figure class="moment-image">
 		<picture>
 			<?php if ($type === 'grid') : ?>
-				<?php if (option('moinframe.moments.thumbs.srcsets.grid-avif')) : ?>
-					<source srcset="<?= $image->srcset(option('moinframe.moments.thumbs.srcsets.grid-avif')) ?>" sizes="<?= $sizes ?>" type="image/avif">
-				<?php endif; ?>
 				<?php if (option('moinframe.moments.thumbs.srcsets.grid-webp')) : ?>
 					<source srcset="<?= $image->srcset(option('moinframe.moments.thumbs.srcsets.grid-webp')) ?>" sizes="<?= $sizes ?>" type="image/webp">
 				<?php endif; ?>
 				<?php $gridCrop = $image->crop(600); ?>
 				<img alt="<?= $alt ?>" src="<?= $gridCrop->url() ?>" srcset="<?= $image->srcset(option('moinframe.moments.thumbs.srcsets.grid')) ?>" sizes="<?= $sizes ?>" width="<?= $gridCrop->width() ?>" height="<?= $gridCrop->height() ?>">
 			<?php else : ?>
-				<?php if (option('moinframe.moments.thumbs.srcsets.lightbox-avif')) : ?>
-					<source srcset="<?= $image->srcset(option('moinframe.moments.thumbs.srcsets.lightbox-avif')) ?>" sizes="<?= $sizes ?>" type="image/avif">
-				<?php endif; ?>
 				<?php if (option('moinframe.moments.thumbs.srcsets.lightbox-webp')) : ?>
 					<source srcset="<?= $image->srcset(option('moinframe.moments.thumbs.srcsets.lightbox-webp')) ?>" sizes="<?= $sizes ?>" type="image/webp">
 				<?php endif; ?>
