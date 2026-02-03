@@ -5,7 +5,7 @@ $allMoments = collection('moments/all')->flip();
 ?>
 
 <dialog class="moment-lightbox">
-	<a href="<?= $page->parent()->url() ?>" class="moment-close" aria-label="<?= t('moinframe.moments.aria-label.close') ?>">
+	<a href="<?= site()->getMomentsPage()->url() ?>#moments" class="moment-close" aria-label="<?= t('moinframe.moments.aria-label.close') ?>">
 		<?php snippet('moments-icon/close'); ?>
 	</a>
 	<div class="moment">

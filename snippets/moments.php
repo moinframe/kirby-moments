@@ -4,7 +4,7 @@ $moments = collection('moments/all');
 <?php if ($moments->count() === 0) : ?>
 	<p class="moment-grid-empty-text"><?= t('moinframe.moments.no-moments') ?></p>
 <?php else: ?>
-	<ul class="moments-grid">
+	<ul class="moments-grid" id="moments">
 		<?php foreach ($moments as $moment) : ?>
 			<li>
 				<a href="<?= $moment->url() ?>" class="moment">
