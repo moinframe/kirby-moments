@@ -1,3 +1,6 @@
 name: femundfilou.kirby-moments.panel.templates.moments.name
+icon: moments
+image:
+  back: white
 sections:
   moments: sections/moments
