@@ -1,15 +1,20 @@
 <?php
+
+declare(strict_types=1);
+
 header('Content-Type: application/rss+xml');
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '<?xml-stylesheet type="text/xsl" href="' . $site->getMomentsPage()?->url() . '/feed.xsl"?>';
+
+$feedLanguage = $kirby->language()?->code() ?? option('femundfilou.kirby-moments.feed.language', 'en');
 ?>
 <rss version="2.0">
 	<channel>
 		<title><?= $page->title()->html() ?></title>
 		<link><?= $page->url() ?></link>
 		<description><?= $page->description()->html() ?></description>
-		<language>en-us</language>
+		<language><?= $feedLanguage ?></language>
 		<?php foreach (collection('moments/all') as $moment) : ?>
 			<item>
 				<title><?= $moment->title()->html() ?></title>

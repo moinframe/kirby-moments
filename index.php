@@ -56,7 +56,8 @@ Kirby::plugin('femundfilou/kirby-moments', [
         'pageid' => '',
         'storeid' => 'moments',
         'feed' => [
-            'active' => true
+            'active' => true,
+            'language' => ''
         ],
         'thumbs' => [
             'sizes' => [
