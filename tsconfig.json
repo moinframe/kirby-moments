@@ -10,14 +10,16 @@
     ],
     "esModuleInterop": true,
     "skipLibCheck": true,
+    /* Source maps */
+    "sourceMap": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "frontend"
   ],
-  "outDir": "./assets",
+  "outDir": "./assets"
 }
