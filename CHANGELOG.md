@@ -1,4 +1,24 @@
+# Changelog
 
+## [2.0.0-beta.0](///compare/v1.0.0-beta.6...v2.0.0-beta.0) (2026-02-03)
+
+### Features
+
+* add configurable feed language 0bf8fcf
+* add empty state to snippet 267f75f
+* add focus trap to lightbox 4d212ba
+* add missing translations beac96d
+* add outine, change controls color bb35f13
+* update dependencies 2cf8777
+* update upload flow e7df1a3
+* use icon for blueprint 6ebc167
+* use node 24 cc72add
+* use text field in grid and lightbox de519b6
+
+### Bug Fixes
+
+* escape texts 28d918c
+* remove default avif encoding 7d7b7b2
 
 ## [1.0.0-beta.6](///compare/v1.0.0-beta.5...v1.0.0-beta.6) (2025-04-17)
 
