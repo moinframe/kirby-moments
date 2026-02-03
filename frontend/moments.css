@@ -62,14 +62,28 @@
   font-weight: var(--moments-font-weight);
   font-size: var(--moments-font-size);
   line-height: var(--moments-line-height);
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 0.25em;
+  flex-direction: column;
+  gap: 0.5em;
   user-select: none;
+  justify-content: flex-start;
 
   svg {
     width: 1em;
     height: 1em;
+  }
+
+  .moment-image-footer__time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .moment-image-footer__text {
+    flex: 1;
   }
 }
 
@@ -222,7 +236,7 @@ ul.moments-grid {
 
   .moment-image-footer {
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .moment-image picture,
