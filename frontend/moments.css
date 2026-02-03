@@ -2,21 +2,22 @@
 # Vars
 --------------------------------------------------------------*/
 :root {
-	--moments-grid-gap: 1.5rem;
-	--moments-grid-columns-xs: 1;
-	--moments-grid-columns-s: 2;
-	--moments-grid-columns-sm: 3;
-	--moments-grid-columns-md: 4;
-	--moments-grid-color: #fff;
-	--moments-grid-background: linear-gradient(rgba(0 0 0 /0.5), #000);
-	--moments-lightbox-background: #fff;
-	--moments-lightbox-color: #000;
-	--moments-lightbox-controls-color: #999;
-	--moments-lightbox-controls-hover-color: #000;
-	--moments-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--moments-font-weight: normal;
-	--moments-font-size: 0.9rem;
-	--moments-line-height: 1;
+  --moments-grid-gap: 1.5rem;
+  --moments-grid-columns-xs: 1;
+  --moments-grid-columns-s: 2;
+  --moments-grid-columns-sm: 3;
+  --moments-grid-columns-md: 4;
+  --moments-grid-color: #fff;
+  --moments-grid-color-empty: lightgrey;
+  --moments-grid-background: linear-gradient(rgba(0 0 0 /0.5), #000);
+  --moments-lightbox-background: #fff;
+  --moments-lightbox-color: #000;
+  --moments-lightbox-controls-color: #999;
+  --moments-lightbox-controls-hover-color: #000;
+  --moments-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --moments-font-weight: normal;
+  --moments-font-size: 0.9rem;
+  --moments-line-height: 1;
 }
 
 /*--------------------------------------------------------------
@@ -24,29 +25,29 @@
 --------------------------------------------------------------*/
 
 .moment-image {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 
-	picture {
-		width: 100%;
-		overflow: hidden;
-		display: flex;
+  picture {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
-	}
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 
-	img {
-		transition: scale 0.3s ease-out, opacity 0.3s ease-out;
-	}
+  img {
+    transition: scale 0.3s ease-out, opacity 0.3s ease-out;
+  }
 
 }
 
@@ -55,21 +56,21 @@
 --------------------------------------------------------------*/
 
 .moment-image-footer {
-	width: 100%;
-	padding: 0.5em;
-	display: flex;
-	font-weight: var(--moments-font-weight);
-	font-size: var(--moments-font-size);
-	line-height: var(--moments-line-height);
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.25em;
-	user-select: none;
+  width: 100%;
+  padding: 0.5em;
+  display: flex;
+  font-weight: var(--moments-font-weight);
+  font-size: var(--moments-font-size);
+  line-height: var(--moments-line-height);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  user-select: none;
 
-	svg {
-		width: 1em;
-		height: 1em;
-	}
+  svg {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -77,80 +78,85 @@
 --------------------------------------------------------------*/
 
 ul.moments-grid {
-	--_gap: var(--moments-grid-gap);
-	--_columns: var(--moments-grid-columns-xs);
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--_gap);
-	container-type: inline-size;
-	container-name: grid;
-	box-sizing: border-box;
-	font-family: var(--moments-font-family);
-	font-weight: var(--moments-font-weight);
-	font-size: var(--moments-font-size);
-	line-height: var(--moments-line-height);
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  --_gap: var(--moments-grid-gap);
+  --_columns: var(--moments-grid-columns-xs);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_gap);
+  container-type: inline-size;
+  container-name: grid;
+  box-sizing: border-box;
+  font-family: var(--moments-font-family);
+  font-weight: var(--moments-font-weight);
+  font-size: var(--moments-font-size);
+  line-height: var(--moments-line-height);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-	li {
-		flex: 0 1 calc((100% / var(--_columns)) - ((var(--_columns) - 1) * var(--_gap)) / var(--_columns));
+  li {
+    flex: 0 1 calc((100% / var(--_columns)) - ((var(--_columns) - 1) * var(--_gap)) / var(--_columns));
 
-		@container grid (min-width: 400px) {
-			--_columns: var(--moments-grid-columns-s);
-		}
+    @container grid (min-width: 400px) {
+      --_columns: var(--moments-grid-columns-s);
+    }
 
-		@container grid (min-width: 600px) {
-			--_columns: var(--moments-grid-columns-sm);
-		}
+    @container grid (min-width: 600px) {
+      --_columns: var(--moments-grid-columns-sm);
+    }
 
-		@container grid (min-width: 900px) {
-			--_columns: var(--moments-grid-columns-md);
-		}
+    @container grid (min-width: 900px) {
+      --_columns: var(--moments-grid-columns-md);
+    }
 
-		.moment {
-			position: relative;
-			display: block;
-			overflow: hidden;
+    .moment {
+      position: relative;
+      display: block;
+      overflow: hidden;
 
-			.moment-image {
-				picture {
-					background-image: var(--moments-grid-background)
-				}
-			}
+      .moment-image {
+        picture {
+          background-image: var(--moments-grid-background)
+        }
+      }
 
-			.moment-image-footer {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				opacity: 0;
-				transform: translateY(100%);
-				color: var(--moments-grid-color);
+      .moment-image-footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        color: var(--moments-grid-color);
 
-				@media (prefers-reduced-motion: no-preference) {
-					transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-				}
-			}
+        @media (prefers-reduced-motion: no-preference) {
+          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        }
+      }
 
-			&:hover,
-			&:active,
-			&:focus-visible {
-				.moment-image-footer {
-					transform: none;
-					opacity: 1;
-				}
+      &:hover,
+      &:active,
+      &:focus-visible {
+        .moment-image-footer {
+          transform: none;
+          opacity: 1;
+        }
 
-				img {
-					opacity: 0.5;
+        img {
+          opacity: 0.5;
 
-					@media (prefers-reduced-motion: no-preference) {
-						scale: 1.1;
-					}
-				}
+          @media (prefers-reduced-motion: no-preference) {
+            scale: 1.1;
+          }
+        }
 
-			}
-		}
-	}
+      }
+    }
+  }
+}
+
+.moment-grid-empty-text {
+  color: var(--moments-grid-color-empty);
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -158,105 +164,105 @@ ul.moments-grid {
 --------------------------------------------------------------*/
 
 .moment-lightbox {
-	font-family: var(--moments-font-family);
-	font-weight: var(--moments-font-weight);
-	box-sizing: border-box;
-	z-index: 1000;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100dvh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: var(--moments-lightbox-background);
-	padding: 2rem;
-	overflow: hidden;
-	border: 0;
-	max-height: none;
-	max-width: none;
+  font-family: var(--moments-font-family);
+  font-weight: var(--moments-font-weight);
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--moments-lightbox-background);
+  padding: 2rem;
+  overflow: hidden;
+  border: 0;
+  max-height: none;
+  max-width: none;
 
-	.moment-close {
-		align-self: flex-end;
-		color: var(--moments-lightbox-controls-color);
-		z-index: 1;
-		margin-bottom: 2rem;
-		user-select: none;
-		transition: color 0.2s ease-out;
+  .moment-close {
+    align-self: flex-end;
+    color: var(--moments-lightbox-controls-color);
+    z-index: 1;
+    margin-bottom: 2rem;
+    user-select: none;
+    transition: color 0.2s ease-out;
 
-		svg {
-			width: 2rem;
-			height: 2rem;
-			display: block;
-		}
+    svg {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+    }
 
-		&:focus {
-			outline: none;
-		}
+    &:focus {
+      outline: none;
+    }
 
-		&:hover,
-		&:active,
-		&:focus-visible {
-			color: var(--moments-lightbox-controls-hover-color);
-		}
-	}
+    &:hover,
+    &:active,
+    &:focus-visible {
+      color: var(--moments-lightbox-controls-hover-color);
+    }
+  }
 
-	.moment {
-		display: grid;
-		grid-template-rows: auto 1fr auto;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-		width: 100%;
-		height: 100%;
-		color: var(--moments-lightbox-color);
-		overflow: hidden;
-	}
+  .moment {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    color: var(--moments-lightbox-color);
+    overflow: hidden;
+  }
 
-	.moment-image-footer {
-		justify-content: center;
-		align-items: flex-start;
-	}
+  .moment-image-footer {
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-	.moment-image picture,
-	.moment-image img {
-		max-width: 100%;
-		max-height: 100%;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-	}
+  .moment-image picture,
+  .moment-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
-	.moment-controls {
-		display: flex;
-		justify-content: space-between;
-		user-select: none;
-	}
+  .moment-controls {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
 
-	.moment-controls a {
-		color: var(--moments-lightbox-controls-color);
-		text-decoration: none;
-		transition: color 0.2s ease-out;
+  .moment-controls a {
+    color: var(--moments-lightbox-controls-color);
+    text-decoration: none;
+    transition: color 0.2s ease-out;
 
-		&:focus {
-			outline: none;
-		}
+    &:focus {
+      outline: none;
+    }
 
-		&:hover,
-		&:active,
-		&:focus-visible {
-			color: var(--moments-lightbox-controls-hover-color);
-		}
+    &:hover,
+    &:active,
+    &:focus-visible {
+      color: var(--moments-lightbox-controls-hover-color);
+    }
 
-		svg {
-			width: 2rem;
-			height: 2rem;
-			display: block;
-		}
+    svg {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+    }
 
-		&.moment-controls__next {
-			margin-left: auto;
-		}
-	}
+    &.moment-controls__next {
+      margin-left: auto;
+    }
+  }
 }
