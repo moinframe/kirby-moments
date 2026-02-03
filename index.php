@@ -57,7 +57,7 @@ Kirby::plugin('moinframe/moments', [
         'pageid' => '',
         'storeid' => 'moments',
         'feed' => [
-            'active' => true,
+            'active' => false,
             'language' => ''
         ],
         'lightbox' => true,

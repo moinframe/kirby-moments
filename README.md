@@ -1,4 +1,4 @@
-![Kirby Moments](kirby-moments.png)
+![Kirby Moments](kirby-moments.jpg)
 # Kirby Moments
 ## Little Moments Matter. Share Yours.
 
@@ -13,6 +13,9 @@ For more information on how to install and customize the plugin, visit the docum
 ## Installation
 You can install this plugin in three different ways, depending on personal preference.
 
+> [!WARNING] Beta
+> This plugin is currently in beta. Test thoroughly before using in production environments.
+>
 ### Install via download
 
 [Download](https://github.com/moinframe/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/moments`.
@@ -28,6 +31,11 @@ git submodule add https://github.com/moinframe/kirby-moments.git site/plugins/mo
 ```sh
 composer require moinframe/kirby-moments
 ```
+
+## Requirements
+
+- **Kirby CMS:** 4.0+ / 5.0+
+- **PHP:** 8.3+
 
 ## Support
 

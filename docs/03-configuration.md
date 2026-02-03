@@ -8,7 +8,7 @@ You can change certain aspects of the plugin through your `site/config/config.ph
 
 ## Change date format
 
-You can change, how the date is being displayed. By default, the plugin will check wether you're using `intl` or `datetime` in your installation and will set an english date like this `MM/dd/YYYY`. You can overwrite the format like this:
+You can change, how the date is being displayed. By default, the plugin will check wether you're using `intl` or `datetime` in your installation and will set a date based on the kirby language. You can overwrite the format like this:
 
 ```php
 return [
@@ -64,7 +64,7 @@ return [
 
 ##  Change the thumbnails
 
-You can adjust the thumbnails being created by modifying the srcsets. You can also set `xx-avif` or `xx-webp` to `null` if you don't want to use those formats.
+You can adjust the thumbnails being created by modifying the srcsets. You can also set `xx-webp` to `null` if you don't want to use this format.
 
 ```php
 return [
@@ -82,12 +82,6 @@ return [
           '900w'  => ['width' => 900, 'height' => 900],
           '1800w'  => ['width' => 1800, 'height' => 1800]
         ],
-        'lightbox-avif' => [
-          '300w'  => ['width' => 300, 'format' => 'avif', 'height' => 300],
-          '600w'  => ['width' => 600, 'format' => 'avif', 'height' => 600],
-          '900w'  => ['width' => 900, 'format' => 'avif', 'height' => 900],
-          '1800w'  => ['width' => 1800, 'format' => 'avif', 'height' => 1800]
-        ],
         'lightbox-webp' => [
           '300w'  => ['width' => 300, 'format' => 'webp', 'height' => 300],
           '600w'  => ['width' => 600, 'format' => 'webp', 'height' => 600],
@@ -98,11 +92,6 @@ return [
           '300w'  => ['width' => 300, 'height' => 300, 'crop' => true],
           '600w'  => ['width' => 600, 'height' => 600, 'crop' => true],
           '900w'  => ['width' => 900, 'height' => 900, 'crop' => true]
-        ],
-        'grid-avif' => [
-          '300w'  => ['width' => 300, 'format' => 'avif', 'height' => 300, 'crop' => true],
-          '600w'  => ['width' => 600, 'format' => 'avif', 'height' => 600, 'crop' => true],
-          '900w'  => ['width' => 900, 'format' => 'avif', 'height' => 900, 'crop' => true]
         ],
         'grid-webp' => [
           '300w'  => ['width' => 300, 'format' => 'webp', 'height' => 300, 'crop' => true],
@@ -117,7 +106,7 @@ return [
 
 ## Enable endpoint for Apple Shortcuts
 
-You can use an Apple Shortcut to upload images quickly. See the [configuration](/shortcuts).
+You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/07-shortcuts).
 
 
 ## Disable Enhanced Lightbox
@@ -135,27 +124,28 @@ return [
 
 ## Disable Moments Overview Page
 
-By default, the moments overview page (listing all moments) is enabled. You can disable it to redirect visitors to the homepage instead. This is useful if you only want moments to be accessible via direct links or embedded in other pages.
+By default, the moments overview page (listing all moments) is disabled and visitors are redirected to the homepage instead. You can enable the overview, if you do not want to use the block or have a simple landing page for your moments.
 
 ```php
 return [
   // ... other options
   'moinframe.moments' => [
-    'overview' => false,
+    'overview' => true,
   ]
 ];
 ```
 
 ## Disable RSS Feed
 
-By default, the plugin creates an RSS feed that can be subscribed to. You can disable the feed like this.
+The plugin can create an RSS feed that can be subscribed to. You can enable the feed like this. You can also change the language set in the feed.
 
 ```php
 return [
   // ... other options
   'moinframe.moments' => [
     'feed' => [
-      'active' => false
+      'active' => true,
+      'language' => 'en'
     ],
   ]
 ];
