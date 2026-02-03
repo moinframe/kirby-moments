@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.0-beta.3](///compare/v2.0.0-beta.2...v2.0.0-beta.3) (2026-02-03)
+
 ## [2.0.0-beta.2](///compare/v2.0.0-beta.1...v2.0.0-beta.2) (2026-02-03)
 
 ## [2.0.0-beta.1](///compare/v2.0.0-beta.0...v2.0.0-beta.1) (2026-02-03)
