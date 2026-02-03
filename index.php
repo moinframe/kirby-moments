@@ -69,12 +69,6 @@ Kirby::plugin('femundfilou/kirby-moments', [
                     '900w'  => ['width' => 900, 'height' => 900],
                     '1800w' => ['width' => 1800, 'height' => 1800]
                 ],
-                'lightbox-avif' => [
-                    '300w'  => ['width' => 300, 'format' => 'avif', 'height' => 300],
-                    '600w'  => ['width' => 600, 'format' => 'avif', 'height' => 600],
-                    '900w'  => ['width' => 900, 'format' => 'avif', 'height' => 900],
-                    '1800w' => ['width' => 1800, 'format' => 'avif', 'height' => 1800]
-                ],
                 'lightbox-webp' => [
                     '300w'  => ['width' => 300, 'format' => 'webp', 'height' => 300],
                     '600w'  => ['width' => 600, 'format' => 'webp', 'height' => 600],
@@ -85,11 +79,6 @@ Kirby::plugin('femundfilou/kirby-moments', [
                     '300w'  => ['width' => 300, 'height' => 300, 'crop' => true],
                     '600w'  => ['width' => 600, 'height' => 600, 'crop' => true],
                     '900w'  => ['width' => 900, 'height' => 900, 'crop' => true]
-                ],
-                'grid-avif' => [
-                    '300w'  => ['width' => 300, 'format' => 'avif', 'height' => 300, 'crop' => true],
-                    '600w'  => ['width' => 600, 'format' => 'avif', 'height' => 600, 'crop' => true],
-                    '900w'  => ['width' => 900, 'format' => 'avif', 'height' => 900, 'crop' => true]
                 ],
                 'grid-webp' => [
                     '300w'  => ['width' => 300, 'format' => 'webp', 'height' => 300, 'crop' => true],
