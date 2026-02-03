@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return function ($site) {
     $store = $site->getMomentsStorePage();
     if (!$store) {

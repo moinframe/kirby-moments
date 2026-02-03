@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class MomentPage extends Kirby\Cms\Page
 {
     public function url($options = null): string
@@ -11,7 +13,7 @@ class MomentPage extends Kirby\Cms\Page
         return $parent->url() . '/' . $this->slug();
     }
 
-    public function image(string $filename = null): Kirby\Cms\File|null
+    public function image(string|null $filename = null): Kirby\Cms\File|null
     {
         if (!$filename) {
             return $this->parent()->images()->template('moment')->findBy('name', $this->slug());

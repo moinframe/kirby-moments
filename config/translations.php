@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'de' => [
         'femundfilou.kirby-moments.aria-label.close' => 'Zurück zur Übersicht',

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Femundfilou\Moments;
 
 use Kirby\Cms\App;

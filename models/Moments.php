@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class MomentsPage extends Kirby\Cms\Page
 {
     public function children(): Kirby\Cms\Pages
