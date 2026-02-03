@@ -120,6 +120,32 @@ return [
 You can use an Apple Shortcut to upload images quickly. See the [configuration](/shortcuts).
 
 
+## Disable Enhanced Lightbox
+
+By default, the JavaScript-enhanced lightbox is enabled. When enabled, clicking a moment opens it in an overlay without a full page reload, with keyboard navigation (arrow keys, escape) and URL updates via the History API. The lightbox is progressively enhanced - it still works without JavaScript. You can disable it like this:
+
+```php
+return [
+  // ... other options
+  'moinframe.moments' => [
+    'lightbox' => false,
+  ]
+];
+```
+
+## Disable Moments Overview Page
+
+By default, the moments overview page (listing all moments) is enabled. You can disable it to redirect visitors to the homepage instead. This is useful if you only want moments to be accessible via direct links or embedded in other pages.
+
+```php
+return [
+  // ... other options
+  'moinframe.moments' => [
+    'overview' => false,
+  ]
+];
+```
+
 ## Disable RSS Feed
 
 By default, the plugin creates an RSS feed that can be subscribed to. You can disable the feed like this.

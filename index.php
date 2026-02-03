@@ -53,13 +53,14 @@ Kirby::plugin('moinframe/moments', [
     ],
     'options' => [
         'dateformat' => '',
+        'overview' => false,
         'pageid' => '',
         'storeid' => 'moments',
         'feed' => [
             'active' => true,
             'language' => ''
         ],
-        'lightbox' => false,
+        'lightbox' => true,
         'thumbs' => [
             'sizes' => [
                 'grid' => '(min-width: 900px) 25vw, (min-width: 600px) 33vw, (min-width: 400px) 50vw, 100vw'
