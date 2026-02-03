@@ -6,7 +6,7 @@ class MomentPage extends Kirby\Cms\Page
 {
 	public function url($options = null): string
 	{
-		$parent = option('moinframe.moments.pageid') ? page(option('moinframe.moments.pageid')) : site()->getMomentsStorePage();
+		$parent = site()->getMomentsPage();
 		if (!$parent) {
 			return '';
 		}

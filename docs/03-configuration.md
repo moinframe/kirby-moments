@@ -34,6 +34,21 @@ return [
 
 In this example, the images will still be stored in the page `moments` but display as `https://your-website.test/stories/image-1`.
 
+### Use your homepage as the display page
+
+You can set `pageid` to `'/'` to display moments directly on your homepage. This will make moment URLs appear at the root level of your site.
+
+```php
+return [
+  // ... other options
+  'moinframe.moments' => [
+    'pageid' => '/',
+  ]
+];
+```
+
+In this example, the images will be stored in `moments` but display as `https://your-website.test/image-1`. The RSS feed will also be available at `https://your-website.test/feed.xml`.
+
 ## Use a different page for storage
 
 You can change the page used to store all images by changing the slug here. Be sure to also change your template to `moments`, e.g. rename the content file to `moments.txt` or `moments.xx.txt` on a multi-language page. You can also delete the currently used store page and the plugin will generate a new store page automatically.

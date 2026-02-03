@@ -1,10 +1,10 @@
 <?php
 
-$momentsPage = page(option('moinframe.moments.pageid'));
+$momentsPage = site()->getMomentsPage();
 
 // Add redirect routes if store and page are different
 if ($momentsPage && !$momentsPage->is($page)) {
-	go($momentsPage ?? $site->url(), 301);
+	go($momentsPage->url(), 301);
 }
 
 snippet('layout/moments', slots: true);

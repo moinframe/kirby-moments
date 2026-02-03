@@ -110,7 +110,14 @@ Kirby::plugin('moinframe/moments', [
             return option('moinframe.moments.storeid') ? kirby()->page(option('moinframe.moments.storeid')) : site();
         },
         'getMomentsPage' => function () {
-            return option('moinframe.moments.pageid') ? kirby()->page(option('moinframe.moments.pageid')) : site()->getMomentsStorePage();
+            $pageid = option('moinframe.moments.pageid');
+            if (!$pageid) {
+                return site()->getMomentsStorePage();
+            }
+            if ($pageid === '/') {
+                return site()->homePage();
+            }
+            return kirby()->page($pageid);
         }
     ],
     'snippets' => [
