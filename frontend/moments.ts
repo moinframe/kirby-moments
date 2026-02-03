@@ -11,7 +11,7 @@ class MomentDate {
 		const time = element.getAttribute('datetime');
 		if (!time) return
 		const formattedTime = this.formatRelativeDate(time);
-		if (formattedTime) element.innerHTML = formattedTime;
+		if (formattedTime) element.textContent = formattedTime;
 	}
 
 	private formatRelativeDate(datestring: string) {
@@ -46,6 +46,7 @@ class MomentLightbox {
 	nextLink: string = ""
 	prevLink: string = ""
 	closeLink: string = ""
+	focusableElements: HTMLElement[] = []
 
 	constructor() {
 		this.lightbox = document.querySelector('.moment-lightbox');
@@ -57,7 +58,17 @@ class MomentLightbox {
 		this.nextLink = this.lightbox.querySelector('.moment-controls__next')?.getAttribute('href') ?? "";
 		this.prevLink = this.lightbox.querySelector('.moment-controls__prev')?.getAttribute('href') ?? "";
 		this.closeLink = this.lightbox.querySelector('.moment-close')?.getAttribute('href') ?? "";
+		this.setupFocusTrap();
 		this.addEventListeners()
+	}
+	setupFocusTrap() {
+		if (!this.lightbox) return;
+		const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		this.focusableElements = Array.from(this.lightbox.querySelectorAll<HTMLElement>(focusableSelectors));
+		// Focus the first interactive element (close button)
+		if (this.focusableElements.length > 0) {
+			this.focusableElements[0].focus();
+		}
 	}
 	addEventListeners() {
 		if (!this.lightbox) return
@@ -70,10 +81,34 @@ class MomentLightbox {
 					if (this.nextLink) this.goTo(this.nextLink)
 					break;
 				case "Escape":
+					e.preventDefault();
 					if (this.closeLink) this.goTo(this.closeLink)
+					break;
+				case "Tab":
+					this.handleTabKey(e);
 					break;
 			}
 		})
+	}
+	handleTabKey(e: KeyboardEvent) {
+		if (this.focusableElements.length === 0) return;
+
+		const firstElement = this.focusableElements[0];
+		const lastElement = this.focusableElements[this.focusableElements.length - 1];
+
+		if (e.shiftKey) {
+			// Shift + Tab: if on first element, wrap to last
+			if (document.activeElement === firstElement) {
+				e.preventDefault();
+				lastElement.focus();
+			}
+		} else {
+			// Tab: if on last element, wrap to first
+			if (document.activeElement === lastElement) {
+				e.preventDefault();
+				firstElement.focus();
+			}
+		}
 	}
 	goTo(url: string) {
 		window.location.href = url;
