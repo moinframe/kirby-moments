@@ -1,14 +1,17 @@
 <?php
 
+use Kirby\Cms\App as Kirby;
+use Kirby\Filesystem\F;
+
 require __DIR__ . '/models/Moments.php';
 require __DIR__ . '/models/Moment.php';
 
-Kirby\Filesystem\F::loadClasses([
+F::loadClasses([
     'femundfilou\\moments\\menu' => 'lib/Menu.php'
 ], __DIR__);
 
 
-Kirby\Cms\App::plugin('femundfilou/kirby-moments', [
+Kirby::plugin('femundfilou/kirby-moments', [
     'blueprints' => [
         'files/moment' => __DIR__ . '/blueprints/files/moment.yml',
         'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
@@ -28,7 +31,7 @@ Kirby\Cms\App::plugin('femundfilou/kirby-moments', [
     ],
     'hooks' => [
         'system.loadPlugins:after' => function () {
-            $kirby = Kirby\Cms\App::instance();
+            $kirby = Kirby::instance();
             $storeId = option('femundfilou.kirby-moments.storeid', 'moments');
 
             if ($kirby->page($storeId)?->exists()) {
