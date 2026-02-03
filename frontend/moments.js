@@ -17,7 +17,7 @@ class MomentDate {
             return;
         const formattedTime = this.formatRelativeDate(time);
         if (formattedTime)
-            element.innerHTML = formattedTime;
+            element.textContent = formattedTime;
     }
     formatRelativeDate(datestring) {
         const now = Date.now();
@@ -68,6 +68,12 @@ class MomentLightbox {
             writable: true,
             value: ""
         });
+        Object.defineProperty(this, "focusableElements", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: []
+        });
         this.lightbox = document.querySelector('.moment-lightbox');
         this.init();
     }
@@ -79,7 +85,18 @@ class MomentLightbox {
         this.nextLink = (_b = (_a = this.lightbox.querySelector('.moment-controls__next')) === null || _a === void 0 ? void 0 : _a.getAttribute('href')) !== null && _b !== void 0 ? _b : "";
         this.prevLink = (_d = (_c = this.lightbox.querySelector('.moment-controls__prev')) === null || _c === void 0 ? void 0 : _c.getAttribute('href')) !== null && _d !== void 0 ? _d : "";
         this.closeLink = (_f = (_e = this.lightbox.querySelector('.moment-close')) === null || _e === void 0 ? void 0 : _e.getAttribute('href')) !== null && _f !== void 0 ? _f : "";
+        this.setupFocusTrap();
         this.addEventListeners();
+    }
+    setupFocusTrap() {
+        if (!this.lightbox)
+            return;
+        const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        this.focusableElements = Array.from(this.lightbox.querySelectorAll(focusableSelectors));
+        // Focus the first interactive element (close button)
+        if (this.focusableElements.length > 0) {
+            this.focusableElements[0].focus();
+        }
     }
     addEventListeners() {
         if (!this.lightbox)
@@ -95,11 +112,35 @@ class MomentLightbox {
                         this.goTo(this.nextLink);
                     break;
                 case "Escape":
+                    e.preventDefault();
                     if (this.closeLink)
                         this.goTo(this.closeLink);
                     break;
+                case "Tab":
+                    this.handleTabKey(e);
+                    break;
             }
         });
+    }
+    handleTabKey(e) {
+        if (this.focusableElements.length === 0)
+            return;
+        const firstElement = this.focusableElements[0];
+        const lastElement = this.focusableElements[this.focusableElements.length - 1];
+        if (e.shiftKey) {
+            // Shift + Tab: if on first element, wrap to last
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        }
+        else {
+            // Tab: if on last element, wrap to first
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
     }
     goTo(url) {
         window.location.href = url;
@@ -109,3 +150,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new MomentDate();
     new MomentLightbox();
 });
+//# sourceMappingURL=moments.js.map
