@@ -2,37 +2,39 @@
 # Kirby Moments
 ## Little Moments Matter. Share Yours.
 
-This plugin adds a simple photo feed to your [Kirby CMS](https://getkirby.com) powered website. 
+This plugin adds a simple photo feed to your [Kirby CMS](https://getkirby.com) powered website.
 
 With the help of an Apple Shortcut, you can instantly post photos from your iOS or macOS device to your website. Every of your moments has it's own url you can share. And there also is a rss feed for others to subscribe to.
 
 ## Documentation
 
-For more information on how to install and customize the plugin, visit the documentation <https://plugins.femundfilou.com/kirby-moments>
+For more information on how to install and customize the plugin, visit the documentation <https://moinfra.me/docs/moinframe-moments>
 
 ## Installation
 You can install this plugin in three different ways, depending on personal preference.
 
 ### Install via download
 
-[Download](https://github.com/femundfilou/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/kirby-moments`.
+[Download](https://github.com/moinframe/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/moments`.
 
 ### Install as git submodule
 
 ```sh
-git submodule add https://github.com/femundfilou/kirby-moments.git site/plugins/kirby-moments
+git submodule add https://github.com/moinframe/kirby-moments.git site/plugins/moments
 ```
 
 ### Install as composer package
 
 ```sh
-composer require femundfilou/kirby-moments
+composer require moinframe/kirby-moments
 ```
+
+## Support
+
+- **Documentation**: See the [Documentation](https://moinfra.me/docs/moinframe-moments) for installation and usage instructions
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/moinframe/kirby-moments/issues)
+
 
 ## License
 
-MIT
-
-## Credits
-
-[Justus Kraft](https://github.com/jukra00)
+MIT License - see [LICENSE.md](LICENSE.md)

@@ -13,7 +13,7 @@ You can change, how the date is being displayed. By default, the plugin will che
 ```php
 return [
   // ... other options
-  'femundfilou.kirby-moments' => [
+  'moinframe.moments' => [
     'dateformat' => 'dd.MM.YYYY',
   ]
 ];
@@ -26,7 +26,7 @@ You can change the visible parent of your moments. This will replace your `store
 ```php
 return [
   // ... other options
-  'femundfilou.kirby-moments' => [
+  'moinframe.moments' => [
     'pageid' => 'stories',
   ]
 ];
@@ -41,7 +41,7 @@ You can change the page used to store all images by changing the slug here. Be s
 ```php
 return [
   // ... other options
-  'femundfilou.kirby-moments' => [
+  'moinframe.moments' => [
     'storeid' => 'momentsstore',
   ]
 ];
@@ -54,7 +54,7 @@ You can adjust the thumbnails being created by modifying the srcsets. You can al
 ```php
 return [
   // ... other options
-  'femundfilou.kirby-moments' => [
+  'moinframe.moments' => [
     'thumbs' => [
       'sizes' => [
         'grid' => '(min-width: 900px) 25vw, (min-width: 600px) 33vw, (min-width: 400px) 50vw, 100vw',
@@ -112,7 +112,7 @@ By default, the plugin creates an RSS feed that can be subscribed to. You can di
 ```php
 return [
   // ... other options
-  'femundfilou.kirby-moments' => [
+  'moinframe.moments' => [
     'feed' => [
       'active' => false
     ],

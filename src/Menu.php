@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Femundfilou\Moments;
+namespace Moinframe\Moments;
 
 use Kirby\Cms\App;
 use Kirby\Toolkit\A;
@@ -33,12 +33,12 @@ class Menu
      */
     public static function page(string | null $label = null, string $icon = 'moments'): array
     {
-        $link = 'pages/' . option('femundfilou.kirby-moments.storeId', 'moments');
+        $link = 'pages/' . option('moinframe.moments.storeId', 'moments');
         return static::$pages[] = [
-            'label'   => $label ?? t('femundfilou.kirby-moments.panel.menu.label'),
+            'label'   => $label ?? t('moinframe.moments.panel.menu.label'),
             'link'    => $link,
             'icon'    => $icon,
-            'current' => fn () => str_contains(static::path(), $link)
+            'current' => fn() => str_contains(static::path(), $link)
         ];
     }
 
@@ -53,9 +53,9 @@ class Menu
         return [
             'label'   => $label,
             'icon'    => $icon,
-            'current' => fn (string $id = null) => $id === 'site' && A::every(
+            'current' => fn(string $id = null) => $id === 'site' && A::every(
                 static::$pages,
-                fn ($page) => !Str::contains(static::path(), $page['link'])
+                fn($page) => !Str::contains(static::path(), $page['link'])
             ),
         ];
     }

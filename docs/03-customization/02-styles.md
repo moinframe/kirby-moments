@@ -13,7 +13,7 @@ If you use the **snippet** or **block** on your pages, you have to include the s
 ```html
 <head>
   <!-- other content-->
-  <?= css('/media/plugins/femundfilou/kirby-moments/moments.css'); ?>
+  <?= css('/media/plugins/moinframe/moments/moments.css'); ?>
 </head>
 ```
 

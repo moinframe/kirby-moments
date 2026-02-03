@@ -26,7 +26,7 @@ To use the snippet, just place it anywhere on your page. It will automatically s
 ```
 
 > [!TIPP]
-> To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/docs/femundfilou-kirby-moments/03-configuration)
+> To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/docs/moinframe-moments/03-configuration)
 
 
 ## Overwrite core parts
@@ -35,7 +35,7 @@ To use the snippet, just place it anywhere on your page. It will automatically s
 
 The `moments` and `moment` template both use a shared snippet called `layout/moments`. You can overwrite that by adding it to your `site/snippets` folder.
 
-Have a look at the [source of the original snippet](https://github.com/femundfilou/kirby-moments/blob/main/snippets/layout/moments.php).
+Have a look at the [source of the original snippet](https://github.com/moinframe/kirby-moments/blob/main/snippets/layout/moments.php).
 
 Of course you can also overwrite one or both templates in your own installation.
 
@@ -44,7 +44,7 @@ Of course you can also overwrite one or both templates in your own installation.
 The icons used by the plugin are also snippets. This means, you can overwrite it, too.
 If you want to overwrite the `clock` icon, simple create a snippet `/site/snippets/moments-icon/clock.php` and put in your svg code.
 
-Here you can find [all icons used](https://github.com/femundfilou/kirby-moments/blob/main/snippets/moments-icon).
+Here you can find [all icons used](https://github.com/moinframe/kirby-moments/blob/main/snippets/moments-icon).
 
 ### Adjust the overlay of each moment
 

@@ -18,7 +18,7 @@ If you want to enable the usage of Apple Shortcuts to upload new images, you hav
 ```php
 return [
   // ... Other options
-  "femundfilou.kirby-moments.token" => "my-secret"
+  "moinframe.moments.token" => "my-secret"
 ]
 ```
 
@@ -33,7 +33,7 @@ To connect the shortcut to your website you need to configure two parameters in 
 
 ### Authorization token
 
-Replace `your-token` with the `femundfilou.kirby-moments.token` you defined in your `site/config/config.php`.
+Replace `your-token` with the `moinframe.moments.token` you defined in your `site/config/config.php`.
 
 ### API Endpoint
 

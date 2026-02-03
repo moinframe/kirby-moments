@@ -1,8 +1,8 @@
 {
-  "name": "femundfilou-kirby-moments",
+  "name": "moinframe-moments",
   "version": "1.0.0-beta.6",
   "description": "Little Moments Matter. Share Yours.",
-  "homepage": "https://plugins.femundfilou.com/kirby-moments",
+  "homepage": "https://moinfra.me/docs/moinframe-moments",
   "scripts": {
     "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./frontend/moments.css ./frontend/reset.css --output-dir ./assets/",
     "build:ts": "tsc && esbuild ./frontend/moments.js --minify --outfile=./assets/moments.min.js",
@@ -10,7 +10,7 @@
     "dev": "turbowatch ./turbowatch.ts",
     "release": "release-it"
   },
-  "author": "Justus Kraft <justus@femundfilou.com>",
+  "author": "Justus Kraft <justus@moinfra.me>",
   "license": "MIT",
   "devDependencies": {
     "@release-it/bumper": "^7.0.5",

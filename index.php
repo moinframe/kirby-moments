@@ -7,11 +7,11 @@ require __DIR__ . '/models/Moments.php';
 require __DIR__ . '/models/Moment.php';
 
 F::loadClasses([
-    'femundfilou\\moments\\menu' => 'lib/Menu.php'
+    'moinframe\\moments\\menu' => 'lib/Menu.php'
 ], __DIR__);
 
 
-Kirby::plugin('femundfilou/kirby-moments', [
+Kirby::plugin('moinframe/moments', [
     'blueprints' => [
         'files/moment' => __DIR__ . '/blueprints/files/moment.yml',
         'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
@@ -32,7 +32,7 @@ Kirby::plugin('femundfilou/kirby-moments', [
     'hooks' => [
         'system.loadPlugins:after' => function () {
             $kirby = Kirby::instance();
-            $storeId = option('femundfilou.kirby-moments.storeid', 'moments');
+            $storeId = option('moinframe.moments.storeid', 'moments');
 
             if ($kirby->page($storeId)?->exists()) {
                 return;
@@ -43,7 +43,7 @@ Kirby::plugin('femundfilou/kirby-moments', [
                 'slug' => $storeId,
                 'template' => 'moments',
                 'content' => [
-                    'title' => t('femundfilou.kirby-moments.panel.section.label'),
+                    'title' => t('moinframe.moments.panel.section.label'),
                     'uuid' => 'moments'
                 ]
             ]);
@@ -96,7 +96,7 @@ Kirby::plugin('femundfilou/kirby-moments', [
             return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
         },
         'toMomentsDate' => function ($field) {
-            $format = option('femundfilou.kirby-moments.dateformat') ?: (option('date.handler') === 'intl' ? 'MM/dd/YYYY' : 'm/d/Y');
+            $format = option('moinframe.moments.dateformat') ?: (option('date.handler') === 'intl' ? 'MM/dd/YYYY' : 'm/d/Y');
             return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
         }
     ],
@@ -107,10 +107,10 @@ Kirby::plugin('femundfilou/kirby-moments', [
     'routes' => require __DIR__ . '/config/routes.php',
     'siteMethods' => [
         'getMomentsStorePage' => function () {
-            return option('femundfilou.kirby-moments.storeid') ? kirby()->page(option('femundfilou.kirby-moments.storeid')) : site();
+            return option('moinframe.moments.storeid') ? kirby()->page(option('moinframe.moments.storeid')) : site();
         },
         'getMomentsPage' => function () {
-            return option('femundfilou.kirby-moments.pageid') ? kirby()->page(option('femundfilou.kirby-moments.pageid')) : site()->getMomentsStorePage();
+            return option('moinframe.moments.pageid') ? kirby()->page(option('moinframe.moments.pageid')) : site()->getMomentsStorePage();
         }
     ],
     'snippets' => [

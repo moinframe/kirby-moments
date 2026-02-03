@@ -12,8 +12,8 @@ return [
   "ready" => fn() => [
     'panel' => [
       'menu' => [
-        'site' => \Femundfilou\Moments\Menu::site(),
-        'moments' => \Femundfilou\Moments\Menu::page(),
+        'site' => \Moinframe\Moments\Menu::site(),
+        'moments' => \Moinframe\Moments\Menu::page(),
         '-',
         'users',
         'system'
@@ -31,8 +31,8 @@ return [
   "ready" => fn() => [
     'panel' => [
       'menu' => [
-        'site' => \Femundfilou\Moments\Menu::site("Dashboard"),
-        'moments' => \Femundfilou\Moments\Menu::page("Momente", "images"),
+        'site' => \Moinframe\Moments\Menu::site("Dashboard"),
+        'moments' => \Moinframe\Moments\Menu::page("Momente", "images"),
         '-',
         'users',
         'system'

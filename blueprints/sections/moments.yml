@@ -1,11 +1,11 @@
-label: femundfilou.kirby-moments.panel.section.label
+label: moinframe.moments.panel.section.label
 type: files
 layout: cards
 text: '<span style="display: flex; gap: 0.25em; font-size: 0.8rem; --icon-size: 0.9rem;"><svg aria-hidden="true" data-type="clock" class="k-icon"><use xlink:href="#icon-clock"></use></svg> {{ model.date.toMomentsDate }}</span><br /><span>{{ model.text }}</span>'
 template: moment
 parent: site.getMomentsStorePage
 query: model.images.filterBy('template', 'moment')
-empty: femundfilou.kirby-moments.panel.section.empty
+empty: moinframe.moments.panel.section.empty
 image:
   aspect: 1
   cover: true

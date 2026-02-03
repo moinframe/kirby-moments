@@ -9,15 +9,15 @@ xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <title>Photo Feed</title>
 			<style>
-				<?= F::read(asset('/media/plugins/femundfilou/kirby-moments/reset.css')->root()) ?>
-				<?= F::read(asset('/media/plugins/femundfilou/kirby-moments/moments.css')->root()) ?>
+				<?= F::read(asset('/media/plugins/moinframe/moments/reset.css')->root()) ?>
+				<?= F::read(asset('/media/plugins/moinframe/moments/moments.css')->root()) ?>
 				ul.moments-grid {
 					max-width: 1140px;
 					margin: 0 auto;
 					padding: 1.5rem;
 					box-sizing: border-box;
 				}
-			
+
 				.moment-image > img {
 					aspect-ratio: 1;
 					width: 100%;
@@ -26,7 +26,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 					opacity: 1 !important;
 				}
 			</style>
-			
+
         </head>
         <body>
 			<ul class="moments-grid">
