@@ -17,5 +17,16 @@ export default defineConfig({
 				await spawn`pnpm build:ts`;
 			},
 		},
+		{
+			expression: [
+				"anyof",
+				["match", "*.vue", "basename"],
+				["match", "src/**/*.js", "wholename"],
+			],
+			name: "build:panel",
+			onChange: async ({ spawn }) => {
+				await spawn`pnpm build:panel`;
+			},
+		},
 	],
 });

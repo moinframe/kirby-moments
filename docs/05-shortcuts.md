@@ -13,7 +13,9 @@ You can install the shortcut via this link:
 
 ## Enable Apple Shortcut
 
-If you want to enable the usage of Apple Shortcuts to upload new images, you have to set a secret in your `site/config/config.php`. This secret protects your website, so only you can upload images to your feed.
+To use the shortcut, you need an API token. The recommended way is to create a per-user token in the Panel. See [API Tokens](/docs/moinframe-moments/06-tokens) for setup instructions.
+
+Alternatively, you can set a shared token in your `site/config/config.php`:
 
 ```php
 return [
@@ -33,7 +35,7 @@ To connect the shortcut to your website you need to configure two parameters in 
 
 ### Authorization token
 
-Replace `your-token` with the `moinframe.moments.token` you defined in your `site/config/config.php`.
+Use either a per-user token created in the Panel or the `moinframe.moments.token` you defined in your config.
 
 ### API Endpoint
 

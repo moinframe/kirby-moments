@@ -6,7 +6,9 @@
   "scripts": {
     "build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./frontend/moments.css ./frontend/reset.css --output-dir ./assets/",
     "build:ts": "tsc && esbuild ./frontend/moments.ts --bundle --minify --format=esm --outfile=./assets/moments.min.js",
-    "build": "pnpm build:css && pnpm build:ts",
+    "build:panel": "npx -y kirbyup src/index.js",
+    "build": "pnpm build:css && pnpm build:ts && pnpm build:panel",
+    "dev:panel": "npx -y kirbyup src/index.js --watch",
     "dev": "turbowatch ./turbowatch.ts",
     "release": "release-it"
   },

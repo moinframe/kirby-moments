@@ -181,18 +181,24 @@ function getNewMomentRoute(): array
 
 /**
  * Verify bearer token using timing-safe comparison
+ * Checks config token first then per-user tokens
  * @return bool
  */
 function verifyToken(): bool
 {
     $authHeader = kirby()->request()->header('X-MOMENTS-TOKEN');
-    $token = option('moinframe.moments.token', '');
-
-    if (empty($token) || empty($authHeader)) {
+    if (empty($authHeader)) {
         return false;
     }
 
-    return hash_equals($token, $authHeader);
+    // central token config
+    $configToken = option('moinframe.moments.token', '');
+    if (!empty($configToken) && hash_equals($configToken, $authHeader)) {
+        return true;
+    }
+
+    // Per-user tokens
+    return \Moinframe\Moments\Tokens::verify($authHeader) !== null;
 }
 
 /**

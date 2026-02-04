@@ -7,7 +7,8 @@ require __DIR__ . '/models/Moments.php';
 require __DIR__ . '/models/Moment.php';
 
 F::loadClasses([
-    'moinframe\\moments\\menu' => 'lib/Menu.php'
+    'moinframe\\moments\\menu' => 'src/Menu.php',
+    'moinframe\\moments\\tokens' => 'src/Tokens.php',
 ], __DIR__);
 
 
@@ -17,6 +18,51 @@ Kirby::plugin('moinframe/moments', [
         'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
         'blocks/moments' => __DIR__ . '/blueprints/blocks/moments.yml',
         'sections/moments' => __DIR__ . '/blueprints/sections/moments.yml',
+    ],
+    'areas' => [
+        'moments' => require __DIR__ . '/areas/moments.php',
+    ],
+    'api' => [
+        'routes' => [
+            [
+                'pattern' => 'moments/tokens',
+                'method' => 'GET',
+                'action' => function () {
+                    $user = kirby()->user();
+                    if (!$user) {
+                        throw new \Exception('Unauthorized');
+                    }
+                    return \Moinframe\Moments\Tokens::list($user->id());
+                },
+            ],
+            [
+                'pattern' => 'moments/tokens',
+                'method' => 'POST',
+                'action' => function () {
+                    $user = kirby()->user();
+                    if (!$user) {
+                        throw new \Exception('Unauthorized');
+                    }
+                    $name = trim(kirby()->request()->body()->get('name', ''));
+                    if (empty($name)) {
+                        throw new \Exception('Token name is required');
+                    }
+                    return \Moinframe\Moments\Tokens::create($user->id(), $name);
+                },
+            ],
+            [
+                'pattern' => 'moments/tokens/(:any)',
+                'method' => 'DELETE',
+                'action' => function (string $tokenId) {
+                    $user = kirby()->user();
+                    if (!$user) {
+                        throw new \Exception('Unauthorized');
+                    }
+                    \Moinframe\Moments\Tokens::delete($user->id(), $tokenId);
+                    return ['status' => 'ok'];
+                },
+            ],
+        ],
     ],
     'collections' => [
         'moments/all' => require_once __DIR__ . '/collections/moments/all.php'
@@ -134,6 +180,9 @@ Kirby::plugin('moinframe/moments', [
             }
             return kirby()->page($pageid);
         }
+    ],
+    'sections' => [
+        'moments-tokens' => require __DIR__ . '/sections/tokens.php',
     ],
     'snippets' => [
         'moments' => __DIR__ . '/snippets/moments.php',

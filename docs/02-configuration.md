@@ -104,6 +104,10 @@ return [
 ];
 ```
 
+## API Tokens
+
+You can create per-user API tokens directly from the Panel to authenticate uploads. See [API Tokens](/docs/moinframe-moments/06-tokens) for setup.
+
 ## Enable endpoint for Apple Shortcuts
 
 You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/05-shortcuts).
