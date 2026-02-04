@@ -18,7 +18,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 					box-sizing: border-box;
 				}
 
-				.moment-image > img {
+				.moments-image > img {
 					aspect-ratio: 1;
 					width: 100%;
 					height: 100%;
@@ -32,8 +32,8 @@ xmlns="http://www.w3.org/1999/xhtml">
 			<ul class="moments-grid">
 				<xsl:for-each select="rss/channel/item">
 				<li>
-					<a class="moment" href="{link}" target="_blank">
-						<div class="moment-image">
+					<a class="moments-item" href="{link}" target="_blank">
+						<div class="moments-image">
 							<xsl:value-of select="description" disable-output-escaping="yes"/>
 						</div>
 					</a>

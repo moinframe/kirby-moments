@@ -1,4 +1,4 @@
-export class MomentTime extends HTMLElement {
+export class MomentsTime extends HTMLElement {
 	connectedCallback() {
 		const time = this.querySelector('time');
 		if (!time) return;

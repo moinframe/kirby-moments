@@ -1,5 +1,5 @@
 import { MomentsLightbox } from './components/MomentsLightbox';
-import { MomentTime } from './components/MomentTime';
+import { MomentsTime } from './components/MomentsTime';
 
 customElements.define('moments-lightbox', MomentsLightbox);
-customElements.define('moment-time', MomentTime);
+customElements.define('moments-time', MomentsTime);

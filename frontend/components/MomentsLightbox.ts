@@ -48,7 +48,7 @@ export class MomentsLightbox extends HTMLElement {
 
 	connectedCallback() {
 		this.closeUrl = this.getAttribute('close-url') || '/';
-		this.dialog = this.querySelector('dialog.moment-lightbox');
+		this.dialog = this.querySelector('dialog.moments-lightbox');
 		this.placeholder = this.querySelector('[data-placeholder]');
 
 		// Build moment data map from grid links
@@ -82,7 +82,7 @@ export class MomentsLightbox extends HTMLElement {
 		const target = e.target as HTMLElement;
 
 		// Handle close button click
-		const closeLink = target.closest<HTMLAnchorElement>('.moment-close');
+		const closeLink = target.closest<HTMLAnchorElement>('.moments-close');
 		if (closeLink) {
 			e.preventDefault();
 			this.closeLightbox(true);
@@ -151,7 +151,7 @@ export class MomentsLightbox extends HTMLElement {
 		}
 
 		// Focus close button
-		const closeButton = this.dialog.querySelector<HTMLAnchorElement>('.moment-close');
+		const closeButton = this.dialog.querySelector<HTMLAnchorElement>('.moments-close');
 		closeButton?.focus();
 
 		// Add keyboard listener
@@ -168,7 +168,7 @@ export class MomentsLightbox extends HTMLElement {
 
 		// Image
 		if (data.image) {
-			html += `<figure class="moment-image"><picture>`;
+			html += `<figure class="moments-image"><picture>`;
 			if (data.image.webpSrcset) {
 				html += `<source srcset="${data.image.webpSrcset}" sizes="${data.image.sizes}" type="image/webp">`;
 			}
@@ -176,23 +176,23 @@ export class MomentsLightbox extends HTMLElement {
 			html += `</picture></figure>`;
 
 			// Footer
-			html += `<div class="moment-image-footer">`;
+			html += `<div class="moments-image-footer">`;
 			if (data.text) {
-				html += `<div class="moment-image-footer__text"><p>${this.escapeHtml(data.text)}</p></div>`;
+				html += `<div class="moments-image-footer__text"><p>${this.escapeHtml(data.text)}</p></div>`;
 			}
 			if (data.date) {
-				html += `<moment-time class="moment-image-footer__time">${ICONS.clock}<time datetime="${data.date.timestamp}">${data.date.formatted}</time></moment-time>`;
+				html += `<moments-time class="moments-image-footer__time">${ICONS.clock}<time datetime="${data.date.timestamp}">${data.date.formatted}</time></moments-time>`;
 			}
 			html += `</div>`;
 		}
 
 		// Controls
-		html += `<div class="moment-controls">`;
+		html += `<div class="moments-controls">`;
 		if (data.prev) {
-			html += `<a href="${data.prev}" class="moment-controls__prev" rel="nofollow" data-nav="prev">${ICONS.prev}</a>`;
+			html += `<a href="${data.prev}" class="moments-controls__prev" rel="nofollow" data-nav="prev">${ICONS.prev}</a>`;
 		}
 		if (data.next) {
-			html += `<a href="${data.next}" class="moment-controls__next" rel="nofollow" data-nav="next">${ICONS.next}</a>`;
+			html += `<a href="${data.next}" class="moments-controls__next" rel="nofollow" data-nav="next">${ICONS.next}</a>`;
 		}
 		html += `</div>`;
 

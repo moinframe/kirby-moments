@@ -4,7 +4,7 @@ if ($image = $moment->image()) :
 	$sizes = $type === 'grid' ? option('moinframe.moments.thumbs.sizes.grid', 'auto') : option('moinframe.moments.thumbs.sizes.lightbox', '100vw');
 	$alt = $moment->alt()->or($moment->text())->or($moment->title())->escape();
 ?>
-	<figure class="moment-image">
+	<figure class="moments-image">
 		<picture>
 			<?php if ($type === 'grid') : ?>
 				<?php if (option('moinframe.moments.thumbs.srcsets.grid-webp')) : ?>
@@ -21,7 +21,7 @@ if ($image = $moment->image()) :
 			<?php endif; ?>
 		</picture>
 	</figure>
-	<div class="moment-image-footer">
+	<div class="moments-image-footer">
 		<?php snippet('moments-image-footer', ['page' => $moment]); ?>
 	</div>
 <?php endif; ?>

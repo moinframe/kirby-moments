@@ -8,13 +8,13 @@ $enhanced = option('moinframe.moments.lightbox', false);
 $closeUrl = site()->getMomentsPage()->url() . '#moments';
 ?>
 <?php if ($moments->count() === 0) : ?>
-    <p class="moment-grid-empty-text"><?= t('moinframe.moments.no-moments') ?></p>
+    <p class="moments-grid-empty-text"><?= t('moinframe.moments.no-moments') ?></p>
 <?php else: ?>
     <?php if ($enhanced) : ?><moments-lightbox close-url="<?= $closeUrl ?>"><?php endif; ?>
         <ul class="moments-grid" id="moments">
             <?php foreach ($moments as $moment) : ?>
                 <li>
-                    <a href="<?= $moment->url() ?>" class="moment" rel="nofollow"<?= $enhanced ? ' data-moment="' . esc(Json::encode($moment->toMomentsInterface()), 'attr') . '"' : '' ?>>
+                    <a href="<?= $moment->url() ?>" class="moments-item" rel="nofollow"<?= $enhanced ? ' data-moment="' . esc(Json::encode($moment->toMomentsInterface()), 'attr') . '"' : '' ?>>
                         <?php snippet('moments-image', ['moment' => $moment, 'type' => 'grid']); ?>
                     </a>
                 </li>
