@@ -134,17 +134,17 @@ function getFeedRoutes(string $momentsSlug, bool $isHomepage = false): array
  * Render feed page
  * @param string $contentType
  * @param string $renderType
- * @return string
+ * @return Response
  */
-function renderFeedPage(string $contentType, string $renderType = 'html'): string
+function renderFeedPage(string $contentType, string $renderType = 'html'): Response
 {
-    kirby()->response()->type($contentType);
-    return Page::factory([
+    $body = Page::factory([
         'slug' => 'feed',
         'template' => 'feed',
-        'model' => 'feed',
-        'content' => ['title' => t('feed')],
+        'content' => ['title' => t('feed', 'Feed')],
     ])->render(contentType: $renderType);
+
+    return new Response($body, $contentType);
 }
 
 /**
