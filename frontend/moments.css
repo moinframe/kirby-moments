@@ -62,6 +62,7 @@
   font-weight: var(--moments-font-weight);
   font-size: var(--moments-font-size);
   line-height: var(--moments-line-height);
+  font-family: var(--moments-font-family);
   align-items: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
