@@ -14,7 +14,7 @@ $closeUrl = site()->getMomentsPage()->url() . '#moments';
         <ul class="moments-grid" id="moments">
             <?php foreach ($moments as $moment) : ?>
                 <li>
-                    <a href="<?= $moment->url() ?>" class="moments-item" rel="nofollow"<?= $enhanced ? ' data-moment="' . esc(Json::encode($moment->toMomentsInterface()), 'attr') . '"' : '' ?>>
+                    <a href="<?= $moment->url() ?>" class="moments-item" rel="nofollow" <?= $enhanced ? 'data-moment="' . esc(Json::encode($moment->toMomentsInterface()), 'attr') . '"' : '' ?>>
                         <?php snippet('moments-image', ['moment' => $moment, 'type' => 'grid']); ?>
                     </a>
                 </li>
@@ -23,6 +23,6 @@ $closeUrl = site()->getMomentsPage()->url() . '#moments';
         <?php if ($enhanced) : ?>
             <?php snippet('moments-lightbox'); ?>
         </moments-lightbox>
-        <?= js(Kirby::plugin('moinframe/moments')->asset('moments.min.js')->url(), ['type' => 'module']) ?>
+        <?= js(Kirby::plugin('moinframe/moments')->asset('moments.min.js')->url(), ['type' => 'module', 'data-taxi-reload']) ?>
     <?php endif; ?>
 <?php endif; ?>
