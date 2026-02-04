@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0-beta.4](///compare/v2.0.0-beta.3...v2.0.0-beta.4) (2026-02-04)
+
+### Bug Fixes
+
+* add font-family to footer 3d432eb
+* add taxi reload attribute to moments js 978a265
+* add time color for lightbox, modify lightbox text ac3138d
+* refactor css class prefix to plural „moments“ 98b8075
+* update docs 6bd27bf
+* update rss feed 83933f6
+
 ## [2.0.0-beta.3](///compare/v2.0.0-beta.2...v2.0.0-beta.3) (2026-02-03)
 
 ## [2.0.0-beta.2](///compare/v2.0.0-beta.1...v2.0.0-beta.2) (2026-02-03)
