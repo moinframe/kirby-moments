@@ -8,7 +8,7 @@ You can change certain aspects of the plugin through your `site/config/config.ph
 
 ## Change date format
 
-You can change, how the date is being displayed. By default, the plugin will check wether you're using `intl` or `datetime` in your installation and will set a date based on the kirby language. You can overwrite the format like this:
+You can change, how the date is being displayed. By default, the plugin will check whether you're using `intl` or `datetime` in your installation and will set a date based on the kirby language. You can overwrite the format like this:
 
 ```php
 return [
@@ -106,7 +106,7 @@ return [
 
 ## Enable endpoint for Apple Shortcuts
 
-You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/07-shortcuts).
+You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/05-shortcuts).
 
 
 ## Disable Enhanced Lightbox
@@ -122,9 +122,9 @@ return [
 ];
 ```
 
-## Disable Moments Overview Page
+## Moments Overview Page
 
-By default, the moments overview page (listing all moments) is disabled and visitors are redirected to the homepage instead. You can enable the overview, if you do not want to use the block or have a simple landing page for your moments.
+By default, the moments overview page (listing all moments) is disabled and visitors are redirected to the homepage instead. You can enable it if you do not want to use the block or have a simple landing page for your moments.
 
 ```php
 return [
@@ -135,9 +135,9 @@ return [
 ];
 ```
 
-## Disable RSS Feed
+## RSS Feed
 
-The plugin can create an RSS feed that can be subscribed to. You can enable the feed like this. You can also change the language set in the feed.
+By default, the RSS feed is disabled. You can enable it and optionally change the language set in the feed.
 
 ```php
 return [

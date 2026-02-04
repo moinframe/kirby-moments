@@ -23,7 +23,7 @@ return [
 ```
 
 > [!WARNING] **Secrets**
-Do not make this token public. Don't commit it to a git repository. If you store your `config.php` in git, please use a `.env` file to securely store your secrets.
+> Do not make this token public. Don't commit it to a git repository. If you store your `config.php` in git, please use a `.env` file to securely store your secrets.
 > [How to use .env with Kirby](https://github.com/bnomei/kirby3-dotenv)
 
 

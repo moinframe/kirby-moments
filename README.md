@@ -13,9 +13,9 @@ For more information on how to install and customize the plugin, visit the docum
 ## Installation
 You can install this plugin in three different ways, depending on personal preference.
 
-> [!WARNING] Beta
+> [!WARNING] **Beta**
 > This plugin is currently in beta. Test thoroughly before using in production environments.
->
+
 ### Install via download
 
 [Download](https://github.com/moinframe/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/moments`.

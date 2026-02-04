@@ -4,7 +4,7 @@ title: Styles
 
 This plugin comes with prebuilt css styles.
 
-> [!TIPP] **Default styles**
+> [!TIP] **Default styles**
 > If you set `'moinframe.moments.overview' => true` and use the default `moments` page template to display your images, the styles are already included for you and you don't have to add anything manually.
 
 
@@ -41,6 +41,7 @@ You can modify the look of the grid and lightbox by overwriting some custom prop
   --moments-lightbox-color: #000;
   --moments-lightbox-controls-color: #595959;
   --moments-lightbox-controls-hover-color: #000;
+  --moments-lightbox-time-color: #595959;
   --moments-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --moments-font-weight: normal;
   --moments-font-size: 0.9rem;
