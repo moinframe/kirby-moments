@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0-beta.5](///compare/v2.0.0-beta.4...v2.0.0-beta.5) (2026-02-04)
+
+### Features
+
+* add user tokens 1b8f1af
+
 ## [2.0.0-beta.4](///compare/v2.0.0-beta.3...v2.0.0-beta.4) (2026-02-04)
 
 ### Bug Fixes
